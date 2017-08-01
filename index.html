@@ -14,73 +14,83 @@
   <body>
     <div class="row">
       <div class="col s12">
-        <form id="user-form">
+        <form id="user-form" class="user-form" method="post" action="">
           <div>
           <h3>Account</h3>
           <section>
               <div class="input-field col s12">
                 <i class="material-icons prefix">person</i>
-                <input id="icon_prefix" type="text" class="validate">
-                <label for="icon_prefix" class="">Username</label>
+                <input id="uname" name="uname" type="text" data-error=".error-uname">
+                <label for="uname">Username *</label>
+                <div class="error-uname"></div>
               </div>
               <div class="input-field col s12">
                 <i class="material-icons prefix">lock</i>
-                <input id="password" type="password" class="validate">
-                <label for="icon_prefix" class="">Password</label>
+                <input id="password" type="password" name="password" data-error=".error-pass">
+                <label for="icon_prefix">Password</label>
+                <div class="error-pass"></div>
               </div>
               <div class="input-field col s12">
                 <i class="material-icons prefix">lock</i>
-                <input id="password-confirm" type="password" class="validate">
-                <label for="icon_prefix" class="">Password Confirm</label>
+                <input id="cpassword" type="password" name="cpassword" data-error=".error-pass-confirm">
+                <label for="icon_prefix">Password Confirm</label>
+                <div class="error-pass-confirm"></div>
               </div>
           </section>
           <h3>Profile</h3>
           <section>
-          <section>
             <div class="row">
               <div class="input-field col m6 s12">
                 <i class="material-icons prefix">account_circle</i>
-                <input id="icon_prefix" type="text" class="validate">
-                <label for="icon_prefix" class="">First Name</label>
+                <input id="fname" type="text" name="fname" data-error=".error-fname">
+                <label for="icon_prefix">First Name *</label>
+                <div class="error-fname"></div>
               </div>
               <div class="input-field col m6 s12">
                 <i class="material-icons prefix">account_circle</i>
-                <input id="icon_prefix" type="text" class="validate">
-                <label for="icon_prefix" class="">Last Name</label>
+                <input id="lname" type="text" name="lname" data-error=".error-lname">
+                <label for="icon_prefix">Last Name *</label>
+                <div class="error-lname"></div>
               </div>
             </div>
             <div class="row">
               <div class="input-field col m6 s12">
                 <i class="material-icons prefix">email</i>
-                <input id="icon_prefix" type="email" class="validate">
-                <label for="icon_prefix" class="">Email Address</label>
+                <input id="cemail" type="email" name="cemail"  data-error=".error-cemail">
+                <label for="icon_prefix">Email Address</label>
+                <div class="error-cemail"></div>
               </div>
               <div class="input-field col m6 s12">
                 <i class="material-icons prefix">phone</i>
-                <input id="icon_telephone" type="tel" class="validate">
+                <input id="icon_telephone" type="tel" data-error=".error-tel">
                 <label for="icon_telephone">Telephone</label>
+                <div class="error-pass-tel"></div>
               </div>
             </div>
             <div class="row">
               <div class="input-field col m6 s12">
-                <select>
-                  <option value="" disabled selected>Choose your option</option>
-                  <option value="1">Option 1</option>
-                  <option value="2">Option 2</option>
-                  <option value="3">Option 3</option>
+                <select id="crole" name="crole" data-error=".error-role">
+                  <option value="" disabled selected>Choose One</option>
+                  <option value="1">Manager</option>
+                  <option value="2">Developer</option>
+                  <option value="3">Business</option>
                 </select>
-                <label>Dropdown Select</label>
+                <label>Choose a profile *</label>
+                <div class="error-role"></div>
               </div>
               <div class="col m3 s6">
-                  <label for="genter_select">Gender</label>
-                  <p>
-                    <input name="cgender" type="radio" id="gender_male" value="male">
-                    <label for="gender_male">Male</label>
-                  </p>
-                  <p>
-                    <input name="cgender" type="radio" id="gender_female" value="female">
-                    <label for="gender_female">Female</label>
-                  </p>
+                <label for="genter_select">Gender *</label>
+                <p>
+                  <input name="cgender" type="radio" id="gender_male" data-error=".errorTxt8"/>
+                  <label for="gender_male">Male</label>
+                </p>
+                <p>
+                  <input name="cgender" type="radio" id="gender_female" value="f"/>
+                  <label for="gender_female">Female</label>
+                </p>
+                <div class="input-field">
+                    <div class="errorTxt8"></div>
+                </div>
               </div>
               <div class="col m3 s6">
               <label for="color_select">Select Colors</label>
@@ -99,7 +109,6 @@
               </div>
             </div>
           </section>
-          </section>
           </div>
         </form>
       </div>
@@ -107,6 +116,8 @@
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <!-- Compiled and minified JavaScript -->
   <script src="https://cdn.rawgit.com/rstaib/jquery-steps/master/build/jquery.steps.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/additional-methods.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
     <script src="js/main.js"></script>
   </body>
