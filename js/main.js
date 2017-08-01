@@ -5,7 +5,7 @@ $(document).ready(function() {
 
 
 });
-    var form = $("#example-form");
+    var form = $("#user-form");
     form.children("div").steps({
         headerTag: "h3",
         bodyTag: "section",
